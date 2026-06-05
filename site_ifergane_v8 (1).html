@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Eric Ifergane — Agent commercial en immobilier commercial en Île-de-France. Cession de fonds de commerce, locaux professionnels, conseil aux entreprises. 75 · 77 · 78 · 91 · 92 · 93 · 94 · 95">
+<title>Eric Ifergane · Immobilier Commercial Grand Paris Est</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --noir:#1B2A3A;
+  --dark:#243547;
+  --surface:#2D4259;
+  --border:rgba(255,255,255,.09);
+  --or:#7EB5E0;
+  --or-light:#A8CCE8;
+  --or-dim:rgba(126,181,224,.15);
+  --creme:#EEF2F7;
+  --creme2:#D8E6F0;
+  --muted:#8A9BB0;
+  --texte:#1A2535;
+  --blanc:#F4F7FA;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:#F4F7FA;color:var(--texte);overflow-x:hidden;line-height:1.6}
+
+/* PHOTO STYLES */
+.hero-photo{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center 30%;opacity:.25}
+.phil-photo{width:100%;height:380px;object-fit:cover;display:block;filter:grayscale(20%)}
+.photo-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:0;height:320px}
+.strip-item{position:relative;overflow:hidden;cursor:pointer}
+.strip-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease,filter .4s ease;filter:grayscale(30%)}
+.strip-item:hover img{transform:scale(1.04);filter:grayscale(0%)}
+.strip-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(27,42,58,.85) 0%,rgba(11,10,8,.2) 50%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px}
+.strip-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--or);margin-bottom:6px}
+.strip-title{font-family:'Libre Baskerville',serif;font-size:16px;color:var(--creme);font-weight:400}
+/* phil split */
+.phil-top{display:grid;grid-template-columns:1fr 1.8fr;gap:64px;align-items:start;margin-bottom:0}
+.phil-split{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:48px;background:#D8E6F0}
+.phil-split-img{overflow:hidden;height:440px}
+.phil-split-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(15%);display:block}
+.phil-split-text{padding:48px 44px;background:#F4F7FA;display:flex;flex-direction:column;justify-content:center}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;transition:all .35s}
+nav.solid{background:var(--noir);border-bottom:1px solid var(--border)}
+.logo{font-family:'Libre Baskerville',serif;font-size:17px;color:var(--creme);text-decoration:none;letter-spacing:.01em}
+.logo span{color:var(--or)}
+.nav-menu{display:flex;align-items:center;gap:36px}
+.nav-menu a{font-size:12px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:rgba(242,237,227,.55);text-decoration:none;transition:color .2s}
+.nav-menu a:hover{color:var(--or)}
+.nav-tel{font-family:'DM Mono',monospace;font-size:12px;color:var(--or);text-decoration:none;border:1px solid rgba(126,181,224,.4);padding:7px 18px;transition:all .2s}
+.nav-tel:hover{background:var(--or);color:#0F1F2E}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.burger span{width:22px;height:1px;background:var(--creme);display:block;transition:all .3s}
+
+/* HERO */
+.hero{min-height:100vh;background:var(--noir);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding:80px 48px}
+.hero-texture{position:absolute;inset:0;opacity:.03;background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(126,181,224,1) 39px,rgba(126,181,224,1) 40px),repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(126,181,224,1) 79px,rgba(126,181,224,1) 80px)}
+.hero-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(ellipse,rgba(126,181,224,.12) 0%,transparent 70%);top:-100px;right:-100px;pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:1100px;display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:center}
+.hero-left{}
+.eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--or);margin-bottom:28px}
+.hero-h1{font-family:'Libre Baskerville',serif;font-size:clamp(40px,5.5vw,72px);font-weight:400;line-height:1.07;color:var(--creme);letter-spacing:-.02em;margin-bottom:0}
+.hero-h1 em{font-style:italic;color:var(--or)}
+.hero-divider{width:48px;height:1px;background:var(--or);margin:32px 0}
+.hero-phrase{font-size:15px;font-weight:300;color:rgba(242,237,227,.55);line-height:1.85;max-width:420px}
+.hero-actions{display:flex;gap:12px;margin-top:40px;flex-wrap:wrap}
+.btn-primary{background:var(--or);color:#0F1F2E;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:14px 30px;text-decoration:none;transition:all .2s}
+.btn-primary:hover{background:var(--or-light)}
+.btn-ghost{border:1px solid var(--border);color:rgba(242,237,227,.6);font-size:11px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;padding:14px 30px;text-decoration:none;transition:all .2s}
+.btn-ghost:hover{border-color:rgba(201,168,76,.5);color:var(--or)}
+.hero-right{display:flex;flex-direction:column;gap:0}
+.hero-stat-row{padding:24px 0;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:16px}
+.hero-stat-row:first-child{padding-top:0;border-top:1px solid var(--border)}
+.stat-num{font-family:'Libre Baskerville',serif;font-size:40px;font-weight:400;color:var(--or);line-height:1;min-width:80px}
+.stat-text{font-size:13px;color:rgba(242,237,227,.5);line-height:1.5}
+.stat-text strong{color:rgba(242,237,227,.85);font-weight:500;display:block;margin-bottom:2px}
+
+/* PHILOSOPHY */
+.philosophy{background:#EBF2FA;padding:100px 48px}
+.phil-inner{max-width:1100px;margin:0 auto}
+.phil-top{display:grid;grid-template-columns:1fr 1.8fr;gap:64px;align-items:start;margin-bottom:80px}
+.section-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--or);text-transform:uppercase;margin-bottom:16px}
+.section-h2{font-family:'Libre Baskerville',serif;font-size:clamp(28px,3.5vw,44px);font-weight:400;line-height:1.12;letter-spacing:-.02em;color:var(--texte)}
+.section-h2 em{font-style:italic;color:rgba(30,28,25,.45)}
+.phil-text{font-size:15px;color:rgba(30,28,25,.6);line-height:1.9}
+.phil-text p{margin-bottom:18px}
+.phil-text p:last-child{margin-bottom:0}
+.phil-quote{border-left:2px solid var(--or);padding-left:24px;margin:32px 0;font-family:'Libre Baskerville',serif;font-size:18px;font-style:italic;color:var(--texte);line-height:1.65}
+.valeurs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#D8E6F0}
+.valeur{background:#F4F7FA;padding:36px 32px;transition:all .3s}
+.valeur:hover{background:var(--surface)}
+.valeur:hover .val-title,.valeur:hover .val-desc{color:var(--creme)}
+.valeur:hover .val-icon{border-color:var(--or);color:var(--or)}
+.val-icon{width:44px;height:44px;border:1px solid #C8DAE8;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:20px;transition:all .3s}
+.val-title{font-family:'Libre Baskerville',serif;font-size:18px;font-weight:400;color:var(--texte);margin-bottom:10px;transition:color .3s}
+.val-desc{font-size:13px;color:var(--muted);line-height:1.75;transition:color .3s}
+
+/* SERVICES */
+.services{background:var(--dark);padding:100px 48px}
+.services-inner{max-width:1100px;margin:0 auto}
+.services-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px}
+.services-list{display:flex;flex-direction:column;gap:0}
+.service-item{display:grid;grid-template-columns:48px 1fr auto;gap:32px;align-items:center;padding:28px 0;border-bottom:1px solid var(--border);cursor:pointer;transition:all .3s}
+.service-item:first-child{border-top:1px solid var(--border)}
+.service-item:hover .svc-num{color:var(--or)}
+.service-item:hover .svc-name{color:var(--or)}
+.service-item:hover .svc-arrow{color:var(--or);transform:translateX(4px)}
+.svc-num{font-family:'DM Mono',monospace;font-size:11px;color:rgba(242,237,227,.2);letter-spacing:.06em;transition:color .3s}
+.svc-body{display:flex;flex-direction:column;gap:6px}
+.svc-name{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:400;color:rgba(242,237,227,.85);transition:color .3s}
+.svc-desc{font-size:13px;color:rgba(242,237,227,.35);line-height:1.6}
+.svc-arrow{font-size:18px;color:rgba(242,237,227,.25);transition:all .3s}
+.services-note{margin-top:40px;padding:24px 28px;border:1px solid var(--border);display:flex;align-items:center;gap:16px}
+.note-dot{width:6px;height:6px;border-radius:50%;background:var(--or);flex-shrink:0}
+.note-text{font-size:13px;color:rgba(242,237,227,.4);line-height:1.6}
+
+/* TERRITOIRE */
+.territoire{background:#F4F7FA;padding:100px 48px}
+.territoire-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.zone-cards{display:flex;flex-direction:column;gap:10px}
+.zone-card{display:flex;align-items:center;gap:20px;padding:18px 22px;border:1px solid #C8DAE8;transition:all .3s;cursor:default}
+.zone-card:hover{border-color:var(--or);background:rgba(126,181,224,.06)}
+.zone-badge{font-family:'DM Mono',monospace;font-size:14px;font-weight:400;color:var(--or);min-width:32px}
+.zone-info{}
+.zone-dept{font-size:14px;font-weight:500;color:var(--texte);margin-bottom:3px}
+.zone-cities{font-size:12px;color:var(--muted)}
+.ter-section-title{font-family:'Libre Baskerville',serif;font-size:clamp(28px,3.5vw,44px);font-weight:400;line-height:1.12;letter-spacing:-.02em;color:var(--texte);margin-bottom:18px}
+.ter-section-title em{font-style:italic}
+.ter-desc{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:36px}
+.ter-highlight{background:var(--dark);padding:24px 28px;display:flex;gap:16px}
+.ter-hl-line{width:2px;background:var(--or);flex-shrink:0}
+.ter-hl-text{font-family:'Libre Baskerville',serif;font-size:15px;font-style:italic;color:var(--creme);line-height:1.7}
+
+/* METHODE */
+.methode{background:var(--dark);padding:100px 48px}
+.methode-inner{max-width:1100px;margin:0 auto}
+.methode-header{text-align:center;margin-bottom:72px}
+.methode-header .section-h2{color:var(--creme)}
+.methode-header .section-eyebrow{display:flex;align-items:center;justify-content:center;gap:12px}
+.methode-header .section-eyebrow::before,.methode-header .section-eyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--or)}
+.steps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.steps-row::after{content:'';position:absolute;top:22px;left:12%;right:12%;height:1px;background:linear-gradient(90deg,transparent,var(--or),transparent)}
+.step{padding:0 24px;text-align:center;position:relative;z-index:1}
+.step-num{width:44px;height:44px;border:1px solid rgba(126,181,224,.4);background:var(--surface);margin:0 auto 24px;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:13px;color:var(--or)}
+.step-title{font-family:'Libre Baskerville',serif;font-size:16px;font-weight:400;color:var(--creme);margin-bottom:10px}
+.step-desc{font-size:12px;color:rgba(242,237,227,.4);line-height:1.7}
+
+/* CONTACT */
+.contact{background:var(--noir);padding:100px 48px}
+.contact-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:80px}
+.contact-left{}
+.contact-section-h2{font-family:'Libre Baskerville',serif;font-size:clamp(28px,3.5vw,42px);font-weight:400;line-height:1.1;color:var(--creme);margin-bottom:18px;letter-spacing:-.02em}
+.contact-section-h2 em{font-style:italic;color:var(--or)}
+.contact-sub{font-size:14px;color:rgba(242,237,227,.4);line-height:1.85;margin-bottom:44px}
+.contact-items{display:flex;flex-direction:column;gap:16px}
+.contact-item{display:flex;gap:14px;padding:16px 18px;border:1px solid var(--border);transition:border-color .2s}
+.contact-item:hover{border-color:rgba(126,181,224,.4)}
+.ci-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;font-family:'DM Mono',monospace}
+.ci-val{font-size:14px;color:var(--creme)}
+.ci-val a{color:var(--or);text-decoration:none}
+.horaires-block{margin-top:20px;padding:16px 18px;border:1px solid rgba(126,181,224,.25);background:rgba(201,168,76,.03)}
+.hor-title{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--or);margin-bottom:10px}
+.hor-line{display:flex;justify-content:space-between;font-size:12px;color:rgba(242,237,227,.45);padding:4px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.contact-form{background:rgba(255,255,255,.025);border:1px solid var(--border);padding:44px}
+.form-title{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:400;color:var(--creme);margin-bottom:6px}
+.form-sub{font-size:13px;color:rgba(242,237,227,.4);margin-bottom:28px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ff{display:flex;flex-direction:column;gap:6px}
+.ff label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-family:'DM Mono',monospace}
+.ff input,.ff select,.ff textarea{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:0;padding:11px 14px;font-family:'Outfit',sans-serif;font-size:13px;color:var(--creme);outline:none;transition:border-color .2s;width:100%;resize:none}
+.ff input:focus,.ff select:focus,.ff textarea:focus{border-color:rgba(126,181,224,.5)}
+.ff select option{background:var(--dark);color:var(--creme)}
+.form-btn{background:var(--or);border:none;color:#0F1F2E;font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:14px 32px;cursor:pointer;transition:all .2s;margin-top:4px;align-self:flex-start}
+.form-btn:hover{background:var(--or-light);color:#0F1F2E}
+.form-stack{display:flex;flex-direction:column;gap:12px}
+.form-note{font-size:11px;color:rgba(242,237,227,.25);margin-top:8px}
+
+/* FOOTER */
+footer{background:var(--noir);border-top:1px solid var(--border);padding:24px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-logo{font-family:'Libre Baskerville',serif;font-size:14px;color:rgba(242,237,227,.4)}
+.footer-logo span{color:var(--or)}
+.footer-mid{font-family:'DM Mono',monospace;font-size:10px;color:rgba(242,237,227,.2);letter-spacing:.06em;text-align:center}
+.footer-right{font-size:12px;color:rgba(242,237,227,.3)}
+.footer-right a{color:rgba(242,237,227,.3);text-decoration:none}
+.footer-right a:hover{color:var(--or)}
+
+/* ANIM */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:0 24px}
+  .nav-menu,.nav-tel{display:none}
+  .burger{display:flex}
+  .hero{padding:90px 24px 60px}
+  .hero-inner{grid-template-columns:1fr;gap:48px}
+  .hero-right{display:grid;grid-template-columns:1fr 1fr}
+  .hero-stat-row:first-child{border-top:none}
+  .philosophy,.services,.territoire,.methode,.contact{padding:70px 24px}
+  .phil-top{grid-template-columns:1fr;gap:32px}
+  .valeurs{grid-template-columns:1fr}
+  .territoire-inner{grid-template-columns:1fr}
+  .steps-row{grid-template-columns:1fr 1fr;gap:32px}
+  .steps-row::after{display:none}
+  .contact-inner{grid-template-columns:1fr}
+  .services-header{flex-direction:column;align-items:flex-start;gap:12px}
+  footer{padding:20px 24px;flex-direction:column;text-align:center}
+  .photo-strip{grid-template-columns:1fr;height:auto}
+  .strip-item{height:220px}
+  .phil-split{grid-template-columns:1fr}
+  .phil-split-img{height:280px}
+}
+
+/* MENTIONS LEGALES */
+.ml-modal{display:none;position:fixed;inset:0;z-index:500;background:rgba(15,25,38,.92);overflow-y:auto;padding:40px 20px}
+.ml-modal.open{display:flex;align-items:flex-start;justify-content:center}
+.ml-box{background:#EEF2F7;border-radius:8px;max-width:720px;width:100%;padding:0;overflow:hidden;margin:auto}
+.ml-header{background:#1B2A3A;padding:32px 40px;display:flex;align-items:center;justify-content:space-between}
+.ml-title{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:400;color:#EEF2F7}
+.ml-close{background:none;border:none;color:rgba(238,242,247,.5);font-size:24px;cursor:pointer;padding:0;line-height:1;transition:color .2s}
+.ml-close:hover{color:#EEF2F7}
+.ml-body{padding:40px;color:#1A2535;font-size:14px;line-height:1.8}
+.ml-section{margin-bottom:28px}
+.ml-section-title{font-family:'Libre Baskerville',serif;font-size:16px;font-weight:400;color:#1B2A3A;border-bottom:1px solid #C8DAE8;padding-bottom:8px;margin-bottom:14px}
+.ml-section p{margin-bottom:10px;color:#3A4A5A}
+.ml-section p:last-child{margin-bottom:0}
+.ml-section strong{color:#1B2A3A;font-weight:500}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="logo" href="#"><span>Eric</span> Ifergane <em style="font-family:'Libre Baskerville',serif;font-style:italic;font-size:13px;color:rgba(238,242,247,.35)">· immobilier commercial</em></a>
+  <div class="nav-menu">
+    <a href="#philosophy">Notre philosophie</a>
+    <a href="#services">Services</a>
+    <a href="#territoire">Territoire</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="nav-tel" href="tel:0698749398">06 98 74 93 98</a>
+  <div class="burger" onclick="toggleMobile()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-texture"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="eyebrow">Agent commercial en immobilier · Île-de-France</div>
+      <h1 class="hero-h1">L'emplacement<br>commercial<br><em>ça se mérite</em></h1>
+      <div class="hero-divider"></div>
+      <p class="hero-phrase">Un cabinet indépendant, ancré dans l'Est Parisien, qui met l'expertise du terrain au service de chaque transaction. Fonds de commerce, locaux professionnels, conseil aux propriétaires.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#contact">Prendre contact</a>
+        <a class="btn-ghost" href="#philosophy">Notre approche</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stat-row">
+        <div class="stat-num" style="font-size:22px;line-height:1.4">Île-de-<br>France</div>
+        <div class="stat-text"><strong>Territoire d'expertise</strong>Les 8 départements franciliens — 75 · 77 · 78 · 91 · 92 · 93 · 94 · 95 — sans restriction géographique.</div>
+      </div>
+      <div class="hero-stat-row">
+        <div class="stat-num">20+</div>
+        <div class="stat-text"><strong>Ans d'expérience métier</strong>IT, commerce, comptabilité — trois expertises qui se complètent pour sécuriser chaque dossier.</div>
+      </div>
+      <div class="hero-stat-row">
+        <div class="stat-num">100%</div>
+        <div class="stat-text"><strong>Dédié à votre projet</strong>Un interlocuteur unique du premier contact à la signature. Pas de file d'attente, pas de transfert de dossier.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="philosophy">
+  <div class="phil-inner">
+
+    <div class="phil-split reveal">
+      <div class="phil-split-img">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Analyse et rigueur — immobilier commercial" loading="lazy">
+      </div>
+      <div class="phil-split-text">
+        <div class="section-eyebrow">Notre philosophie</div>
+        <h2 class="section-h2" style="margin-bottom:18px">Connaître un marché,<br>c'est <em>y avoir vécu</em></h2>
+        <div class="phil-text">
+          <p>L'immobilier commercial ne ressemble à aucun autre métier. Un bureau, un local, un fonds de commerce — ce n'est pas simplement des mètres carrés et un loyer. C'est l'adresse qui va conditionner la viabilité d'un projet, la progression d'un chiffre d'affaires, le quotidien d'une équipe.</p>
+          <div class="phil-quote">« Nous ne vendons pas des emplacements. Nous aidons des entrepreneurs à faire les bons choix — avec la rigueur de ceux qui ont eux-mêmes géré un commerce. »</div>
+          <p>Notre approche est construite sur une conviction simple : pour conseiller un commerçant, il faut avoir été commerçant. Pour comprendre les besoins d'une TPE tech, il faut avoir géré de l'infrastructure. Pour valoriser un actif, il faut savoir lire des comptes d'exploitation.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="valeurs reveal">
+      <div class="valeur">
+        <div class="val-icon">◎</div>
+        <div class="val-title">Transparence</div>
+        <div class="val-desc">Honoraires clairs, communiqués avant signature. Méthodes d'estimation expliquées. Aucune ambiguïté dans la relation client — jamais.</div>
+      </div>
+      <div class="valeur">
+        <div class="val-icon">⬡</div>
+        <div class="val-title">Réactivité</div>
+        <div class="val-desc">Disponible du dimanche au vendredi, de 9h à 20h. Une annonce n'attend pas — un propriétaire réceptif non plus. Nous répondons dans les 24h.</div>
+      </div>
+      <div class="valeur">
+        <div class="val-icon">△</div>
+        <div class="val-title">Ancrage terrain</div>
+        <div class="val-desc">Basé à Noisy-le-Grand, actif quotidiennement sur le terrain. Nous connaissons les rues, les flux, les bailleurs et les prix réels de chaque secteur.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="services-header reveal">
+      <div>
+        <div class="section-eyebrow">Expertises</div>
+        <h2 style="font-family:'Libre Baskerville',serif;font-size:clamp(28px,3.5vw,44px);font-weight:400;color:var(--creme);line-height:1.1;letter-spacing:-.02em">Ce que nous faisons</h2>
+      </div>
+      <a class="btn-primary" href="#contact">Nous contacter</a>
+    </div>
+    <div class="services-list reveal">
+      <div class="service-item">
+        <div class="svc-num">01</div>
+        <div class="svc-body">
+          <div class="svc-name">Cession de fonds de commerce</div>
+          <div class="svc-desc">Estimation, mise en marché confidentielle, sélection et qualification des repreneurs, accompagnement jusqu'à la signature notariée. Pour les cédants qui veulent transmettre dans les meilleures conditions.</div>
+        </div>
+        <div class="svc-arrow">→</div>
+      </div>
+      <div class="service-item">
+        <div class="svc-num">02</div>
+        <div class="svc-body">
+          <div class="svc-name">Recherche de locaux professionnels</div>
+          <div class="svc-desc">Identification, prospection et négociation de locaux commerciaux, bureaux et locaux d'activité pour les entreprises en développement sur le Grand Paris Est. Chasseur de locaux dédié.</div>
+        </div>
+        <div class="svc-arrow">→</div>
+      </div>
+      <div class="service-item">
+        <div class="svc-num">03</div>
+        <div class="svc-body">
+          <div class="svc-name">Vente et location de murs commerciaux</div>
+          <div class="svc-desc">Valorisation d'actifs occupés ou libres, mise en relation avec des investisseurs qualifiés, gestion de la transaction de bout en bout. Pour les propriétaires et bailleurs institutionnels ou privés.</div>
+        </div>
+        <div class="svc-arrow">→</div>
+      </div>
+      <div class="service-item">
+        <div class="svc-num">04</div>
+        <div class="svc-body">
+          <div class="svc-name">Conseil et analyse d'emplacement</div>
+          <div class="svc-desc">Étude de marché locale, analyse de flux et de rentabilité, lecture et négociation de bail commercial. Pour les porteurs de projet qui veulent sécuriser leur implantation avant de signer.</div>
+        </div>
+        <div class="svc-arrow">→</div>
+      </div>
+    </div>
+    <div class="services-note reveal">
+      <div class="note-dot"></div>
+      <div class="note-text">Honoraires à la charge du preneur pour les locations — aucun frais pour les propriétaires bailleurs dans le cadre d'un mandat simple. Tarifs communiqués avant signature, sans surprise.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO STRIP -->
+<div class="photo-strip">
+  <div class="strip-item">
+    <img src="https://images.unsplash.com/photo-1441986380878-c4248f5b8b5b?auto=format&fit=crop&w=700&q=80" alt="Fonds de commerce" loading="lazy">
+    <div class="strip-overlay">
+      <div class="strip-tag">01 · Cession</div>
+      <div class="strip-title">Fonds de commerce</div>
+    </div>
+  </div>
+  <div class="strip-item">
+    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=700&q=80" alt="Locaux professionnels" loading="lazy">
+    <div class="strip-overlay">
+      <div class="strip-tag">02 · Location</div>
+      <div class="strip-title">Locaux professionnels</div>
+    </div>
+  </div>
+  <div class="strip-item">
+    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=700&q=80" alt="Murs commerciaux" loading="lazy">
+    <div class="strip-overlay">
+      <div class="strip-tag">03 · Investissement</div>
+      <div class="strip-title">Murs commerciaux</div>
+    </div>
+  </div>
+</div>
+
+<!-- TERRITOIRE -->
+<section class="territoire" id="territoire">
+  <div class="territoire-inner">
+  <div class="reveal">
+      <div class="section-eyebrow">Territoire</div>
+      <h2 class="ter-section-title">L'Île-de-France,<br><em>notre terrain de jeu</em></h2>
+      <p class="ter-desc">Pas un territoire limité, pas une base de données anonyme. Une couverture de l'ensemble des 8 départements franciliens — pour accompagner chaque projet, où qu'il se trouve en Île-de-France, avec la même rigueur et la même connaissance terrain.</p>
+      <div class="ter-highlight" style="position:relative;overflow:hidden;padding:0">
+        <img src="https://images.unsplash.com/photo-1502602001-0be76f3e7afe?auto=format&fit=crop&w=600&q=80" alt="Grand Paris Est" loading="lazy" style="width:100%;height:200px;object-fit:cover;display:block;filter:grayscale(20%);opacity:.6">
+        <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(11,10,8,.9),rgba(11,10,8,.5));display:flex;align-items:center;padding:24px 28px;gap:16px">
+          <div class="ter-hl-line" style="height:48px"></div>
+          <div class="ter-hl-text" style="font-size:14px">« Le bon emplacement, ça ne se trouve pas sur un portail. Ça se trouve en connaissant les propriétaires avant qu'ils publient. »</div>
+        </div>
+      </div>
+    </div>
+    <div class="zone-cards reveal">
+      <div class="zone-card">
+        <div class="zone-badge">75</div>
+        <div class="zone-info">
+          <div class="zone-dept">Paris</div>
+        </div>
+      </div>
+      <div class="zone-card">
+        <div class="zone-badge">77</div>
+        <div class="zone-info">
+          <div class="zone-dept">Seine-et-Marne</div>
+        </div>
+      </div>
+      <div class="zone-card">
+        <div class="zone-badge">78</div>
+        <div class="zone-info">
+          <div class="zone-dept">Yvelines</div>
+        </div>
+      </div>
+      <div class="zone-card">
+        <div class="zone-badge">91</div>
+        <div class="zone-info">
+          <div class="zone-dept">Essonne</div>
+        </div>
+      </div>
+      <div class="zone-card">
+        <div class="zone-badge">92</div>
+        <div class="zone-info">
+          <div class="zone-dept">Hauts-de-Seine</div>
+        </div>
+      </div>
+      <div class="zone-card">
+        <div class="zone-badge">93</div>
+        <div class="zone-info">
+          <div class="zone-dept">Seine-Saint-Denis</div>
+        </div>
+      </div>
+      <div class="zone-card">
+        <div class="zone-badge">94</div>
+        <div class="zone-info">
+          <div class="zone-dept">Val-de-Marne</div>
+        </div>
+      </div>
+      <div class="zone-card">
+        <div class="zone-badge">95</div>
+        <div class="zone-info">
+          <div class="zone-dept">Val-d'Oise</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODE -->
+<section class="methode">
+  <div class="methode-inner">
+    <div class="methode-header reveal">
+      <div class="section-eyebrow">Méthode</div>
+      <h2 class="section-h2" style="color:var(--creme)">De la première rencontre<br>à la <em style="color:rgba(242,237,227,.4)">remise des clés</em></h2>
+    </div>
+    <div class="steps-row reveal">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Échange découverte</div>
+        <div class="step-desc">Comprendre votre projet, vos contraintes, votre calendrier. Sans engagement, en toute confidentialité.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Analyse & estimation</div>
+        <div class="step-desc">Étude de marché, valorisation précise, positionnement stratégique adapté à votre situation.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Prospection ciblée</div>
+        <div class="step-desc">Identification des candidats ou des biens, visites qualifiées, négociation maîtrisée — nous gérons.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">Signature sécurisée</div>
+        <div class="step-desc">Coordination notariale, suivi administratif, remise des clés. Mission accomplie, relation pérenne.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left reveal">
+      <div class="section-eyebrow">Contact</div>
+      <h2 class="contact-section-h2">Parlons de<br>votre <em>projet</em></h2>
+      <p class="contact-sub">Que vous ayez un projet défini ou une simple question, nous répondons sous 24h — généralement beaucoup moins.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div>
+            <div class="ci-label">Téléphone & WhatsApp</div>
+            <div class="ci-val"><a href="tel:0698749398">06 98 74 93 98</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div>
+            <div class="ci-label">Email</div>
+            <div class="ci-val"><a href="mailto:eric.ifergane@immobilier.email">eric.ifergane@immobilier.email</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div>
+            <div class="ci-label">Estimation en ligne</div>
+            <div class="ci-val"><a href="https://iferic1-tech.github.io/index.html/" target="_blank">Formulaire d'estimation →</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="horaires-block">
+        <div class="hor-title">Disponibilités</div>
+        <div class="hor-line"><span>Dimanche – Vendredi</span><span>9h00 – 20h00</span></div>
+        <div class="hor-line" style="border:none"><span>Samedi</span><span style="color:rgba(242,237,227,.2)">Fermé</span></div>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <div class="form-title">Demande de contact</div>
+      <p class="form-sub">Décrivez votre projet en quelques lignes — nous vous recontactons rapidement.</p>
+      <div id="form-success" style="display:none;padding:24px;background:rgba(42,122,74,.15);border:1px solid rgba(42,122,74,.4);margin-bottom:16px">
+        <p style="color:#6fcf97;font-family:'Libre Baskerville',serif;font-size:16px;margin-bottom:6px">Message envoyé ✓</p>
+        <p style="color:rgba(242,237,227,.5);font-size:13px">Nous vous recontactons sous 24h — généralement beaucoup moins.</p>
+      </div>
+      <form id="contact-form" class="form-stack" action="https://formspree.io/f/mdavkjgd" method="POST">
+        <div class="frow">
+          <div class="ff"><label>Prénom & Nom *</label><input type="text" name="nom" placeholder="Jean Martin" required></div>
+          <div class="ff"><label>Téléphone *</label><input type="tel" name="telephone" placeholder="06 12 34 56 78" required></div>
+        </div>
+        <div class="ff"><label>Email</label><input type="email" name="email" placeholder="jean@exemple.fr"></div>
+        <div class="ff">
+          <label>Votre projet</label>
+          <select name="projet">
+            <option value="">Sélectionner...</option>
+            <option>Je veux céder mon fonds de commerce</option>
+            <option>Je cherche un fonds de commerce à reprendre</option>
+            <option>Je cherche un local commercial à louer</option>
+            <option>Je cherche des murs commerciaux à acheter</option>
+            <option>Je suis propriétaire et cherche un locataire</option>
+            <option>Investissement — actif commercial</option>
+            <option>Autre demande</option>
+          </select>
+        </div>
+        <div class="ff"><label>Message</label><textarea name="message" rows="4" placeholder="Votre secteur, votre surface, votre budget estimé..."></textarea></div>
+        <button type="submit" class="form-btn" id="fbtn">Envoyer →</button>
+        <p class="form-note">En envoyant ce formulaire vous acceptez d'être contacté par notre cabinet. Aucune donnée n'est transmise à des tiers.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo"><span>Eric</span> Ifergane · <em style="font-style:italic">Immobilier commercial</em></div>
+  <div class="footer-mid">Agent commercial · RSAC 379 689 292 · Les Porteclés Immobilier · Île-de-France 75·77·78·91·92·93·94·95</div>
+  <div class="footer-right" style="display:flex;gap:20px"><a href="https://lesportecles.com" target="_blank">lesportecles.com</a><a href="#" onclick="openML();return false;" style="color:rgba(238,242,247,.3);text-decoration:none">Mentions légales</a></div>
+</footer>
+
+<script>
+// Nav
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>40));
+
+// Reveal
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*100);obs.unobserve(e.target)}});
+},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Mobile menu
+function toggleMobile(){
+  if(document.getElementById('mob')){document.getElementById('mob').remove();return}
+  const m=document.createElement('div');
+  m.id='mob';
+  m.style.cssText='position:fixed;top:64px;inset:0;background:rgba(11,10,8,.97);z-index:150;display:flex;flex-direction:column;justify-content:center;gap:32px;padding:48px';
+  ['Notre philosophie|#philosophy','Services|#services','Territoire|#territoire','Contact|#contact'].forEach(s=>{
+    const[txt,href]=s.split('|');
+    const a=document.createElement('a');
+    a.href=href;a.textContent=txt;
+    a.style.cssText='font-family:"Libre Baskerville",serif;font-size:28px;color:rgba(242,237,227,.8);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:16px';
+    a.onclick=()=>m.remove();
+    m.appendChild(a);
+  });
+  document.body.appendChild(m);
+}
+
+// Form Formspree
+const form=document.getElementById('contact-form');
+form.addEventListener('submit',async function(e){
+  e.preventDefault();
+  const btn=document.getElementById('fbtn');
+  btn.textContent='Envoi en cours...';
+  btn.disabled=true;
+  btn.style.opacity='.7';
+  const data=new FormData(form);
+  try{
+    const res=await fetch('https://formspree.io/f/mdavkjgd',{method:'POST',body:data,headers:{Accept:'application/json'}});
+    if(res.ok){
+      form.style.display='none';
+      document.getElementById('form-success').style.display='block';
+    }else{
+      btn.textContent='Erreur — réessayez';
+      btn.style.background='#8B2020';
+      btn.disabled=false;
+      btn.style.opacity='1';
+    }
+  }catch(err){
+    btn.textContent='Erreur réseau — réessayez';
+    btn.disabled=false;
+    btn.style.opacity='1';
+  }
+});
+
+function openML(){document.getElementById('ml-modal').classList.add('open');document.body.style.overflow='hidden';}
+function closeML(){document.getElementById('ml-modal').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('ml-modal').addEventListener('click',function(e){if(e.target===this)closeML();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeML();});
+</script>
+
+<!-- MENTIONS LEGALES MODAL -->
+<div class="ml-modal" id="ml-modal">
+  <div class="ml-box">
+    <div class="ml-header">
+      <div class="ml-title">Mentions légales</div>
+      <button class="ml-close" onclick="closeML()">×</button>
+    </div>
+    <div class="ml-body">
+
+      <div class="ml-section">
+        <div class="ml-section-title">Éditeur du site</div>
+        <p><strong>Eric Ifergane</strong><br>
+        Agent commercial indépendant en immobilier commercial<br>
+        Inscrit au Registre Spécial des Agents Commerciaux (RSAC)<br>
+        <strong>RSAC n° 379 689 292</strong> — Tribunal de Commerce de Paris</p>
+        <p><strong>Réseau mandant :</strong> SAS Immobilier Email — Les Porteclés Immobilier<br>
+        Site du réseau : <a href="https://lesportecles.com" target="_blank" style="color:#2D4259">lesportecles.com</a></p>
+        <p><strong>Contact :</strong><br>
+        Tél. : 06 98 74 93 98<br>
+        Email : eric.ifergane@immobilier.email<br>
+        Zone d'activité : Île-de-France — 75 · 77 · 78 · 91 · 92 · 93 · 94 · 95</p>
+        <p><strong>Horaires :</strong> Dimanche – Vendredi, 9h00 – 20h00</p>
+      </div>
+
+      <div class="ml-section">
+        <div class="ml-section-title">Hébergement</div>
+        <p>Ce site est hébergé sur GitHub Pages — GitHub, Inc.<br>
+        88 Colin P Kelly Jr Street, San Francisco, CA 94107, États-Unis<br>
+        <a href="https://pages.github.com" target="_blank" style="color:#2D4259">pages.github.com</a></p>
+      </div>
+
+      <div class="ml-section">
+        <div class="ml-section-title">Activité réglementée</div>
+        <p>Eric Ifergane exerce en qualité d'agent commercial mandaté par un titulaire de la carte professionnelle délivrée par la CCI conformément à la loi n° 70-9 du 2 janvier 1970 (loi Hoguet) et au décret n° 72-678 du 20 juillet 1972.</p>
+        <p>À ce titre, Eric Ifergane dispose d'une <strong>attestation de collaborateur habilitant à négocier, s'entremettre ou s'engager</strong> au nom du titulaire de la carte T.</p>
+        <p><strong>Garantie financière et assurance RCP :</strong> souscrites via le réseau Les Porteclés Immobilier, conformément aux obligations légales.</p>
+      </div>
+
+      <div class="ml-section">
+        <div class="ml-section-title">Responsabilité</div>
+        <p>Les informations contenues sur ce site sont fournies à titre indicatif. Eric Ifergane s'efforce de maintenir ces informations à jour mais ne saurait être tenu responsable d'erreurs ou omissions, ni de l'utilisation faite par les visiteurs des informations publiées.</p>
+        <p>Les photographies illustrant ce site proviennent de la plateforme Unsplash et sont utilisées conformément à la licence Unsplash (usage libre et gratuit, y compris commercial).</p>
+      </div>
+
+      <div class="ml-section">
+        <div class="ml-section-title">Protection des données personnelles (RGPD)</div>
+        <p>Les données collectées via le formulaire de contact (nom, téléphone, email, description du projet) sont utilisées <strong>exclusivement</strong> pour répondre à votre demande et assurer le suivi de votre projet immobilier.</p>
+        <p>Elles ne sont transmises à aucun tiers et ne font l'objet d'aucun traitement automatisé. Elles sont conservées pour la durée nécessaire au traitement de votre demande.</p>
+        <p>Conformément au Règlement Général sur la Protection des Données (RGPD — UE 2016/679), vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit : <strong>eric.ifergane@immobilier.email</strong></p>
+      </div>
+
+      <div class="ml-section">
+        <div class="ml-section-title">Cookies</div>
+        <p>Ce site n'utilise aucun cookie de traçage, aucun outil d'analyse d'audience (Google Analytics ou équivalent) et aucune technologie de ciblage publicitaire. Votre navigation reste entièrement privée.</p>
+      </div>
+
+      <div class="ml-section">
+        <div class="ml-section-title">Propriété intellectuelle</div>
+        <p>L'ensemble des contenus textuels de ce site (textes, rubriques, accroche) est la propriété exclusive d'Eric Ifergane. Toute reproduction, même partielle, est interdite sans autorisation écrite préalable.</p>
+      </div>
+
+      <div class="ml-section" style="margin-bottom:0">
+        <div class="ml-section-title">Médiation et règlement des litiges</div>
+        <p>En cas de litige, vous pouvez contacter le médiateur de la consommation de la FNAIM ou saisir la DGCCRF. Plateforme européenne de règlement en ligne des litiges : <a href="https://ec.europa.eu/consumers/odr" target="_blank" style="color:#2D4259">ec.europa.eu/consumers/odr</a></p>
+        <p style="font-size:12px;color:#8A9BB0;margin-top:16px">Dernière mise à jour : Juin 2026</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
